@@ -33,7 +33,7 @@ export default function Home() {
         <div className="text-center max-w-2xl mx-auto">
           {/* Logo — put your file at /public/trufi-logo.png or change the src */}
           <img
-            src="/trufi-logo.png"
+            src="/public/trufi-logo.png"
             alt="TruFi logo"
             className="w-40 md:w-56 mx-auto drop-shadow-[0_0_28px_rgba(0,240,255,0.35)]"
           />
@@ -48,4 +48,4 @@ export default function Home() {
           <div className="mt-8 flex items-center justify-center gap-3">
             {/* Primary CTA — change the mailto or swap to Calendly/Typeform */}
             <a
-              href="mailto:team@trufidao.com?subject=TruFi%20Inquiry&body=Hi%20TruFi%20team%2C%0A%0AWe%27re%20interested%20in%20working%20with%20you.%20Here%27s%20a%
+              href="mailto:coo@trufidao.com?subject=TruFi%20Inquiry&body=Hi%20TruFi%20team%2C%0A%0AWe%27re%20interested%20in%20working%20with%20you.%20Here%27s%20a%
