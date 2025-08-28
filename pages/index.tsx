@@ -44,7 +44,7 @@ export default function Home() {
           <div className="inline-flex items-center justify-center rounded-full p-4 ring-2 ring-lime-400/70 shadow-[0_0_80px_rgba(57,255,20,0.25)]">
             {/* Put your logo at /public/trufi-logo.png */}
             <img
-              src="/trufi-logo.png"
+              src="/public/trufi-logo.png"
               alt="TruFi logo"
               className="w-40 md:w-56 drop-shadow-[0_0_28px_rgba(0,240,255,0.35)]"
             />
@@ -60,7 +60,7 @@ export default function Home() {
           <div className="mt-8 flex items-center justify-center gap-3">
             {/* Primary CTA — email compose. Swap the email or link to Calendly/Typeform if you prefer */}
             <a
-              href="mailto:hello@trufi.xyz?subject=TruFi%20—%20Let%27s%20talk&body=Hi%20TruFi%20team%2C%0A%0AWe%27re%20interested%20in%20working%20with%20you.%20Here%27s%20a%20quick%20overview%20of%20our%20project%3A%0A"
+              href="mailto:coo@trufidao.com?subject=TruFi%20—%20Let%27s%20talk&body=Hi%20TruFi%20team%2C%0A%0AWe%27re%20interested%20in%20working%20with%20you.%20Here%27s%20a%20quick%20overview%20of%20our%20project%3A%0A"
               className="rounded-full bg-lime-400 text-black font-semibold px-6 py-3 shadow hover:scale-105 transition"
             >
               Get in touch
