@@ -1,6 +1,25 @@
 import Head from 'next/head';
 
 export default function Home() {
+  // ---- Email CTA (edit these anytime) ----
+  const email = 'trufiadmin@trufidao.com';
+  const subject = encodeURIComponent('TruFi inquiry');
+  const body = encodeURIComponent(
+    `Hi TruFi Team,
+
+My name:
+Company:
+What we need help with:
+
+— sent from trufidao.com`
+  );
+  const mailtoHref = `mailto:${email}?subject=${subject}&body=${body}`;
+  // ----------------------------------------
+
+  // Logo & background tweaks
+  const LOGO_HEIGHT = 128; // 2x the previous 64px
+  const BACKGROUND = '#f5f6f8'; // light gray; keeps dark text readable
+
   return (
     <>
       <Head>
@@ -13,7 +32,7 @@ export default function Home() {
           minHeight: '100vh',
           display: 'grid',
           placeItems: 'center',
-          background: '#ffffff',
+          background: BACKGROUND,
           color: '#111',
         }}
       >
@@ -22,7 +41,7 @@ export default function Home() {
           <img
             src="/trufi-logo.png"
             alt="TruFi"
-            style={{ height: 64, margin: '0 auto 20px', objectFit: 'contain' }}
+            style={{ height: LOGO_HEIGHT, margin: '0 auto 24px', objectFit: 'contain' }}
             onError={(e) => ((e.currentTarget).style.display = 'none')}
           />
 
@@ -33,9 +52,9 @@ export default function Home() {
             We’re operational. Let’s talk.
           </p>
 
-          {/* Change this link to Calendly/Typeform later if you want */}
+          {/* CTA — opens email client */}
           <a
-            href="mailto:hello@trufidao.com?subject=TruFi%20Inquiry"
+            href={mailtoHref}
             style={{
               display: 'inline-block',
               padding: '12px 20px',
@@ -52,3 +71,4 @@ export default function Home() {
     </>
   );
 }
+
