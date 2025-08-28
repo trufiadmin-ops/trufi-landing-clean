@@ -6,18 +6,19 @@ function pad(n: number) {
 }
 
 export default function Home() {
-  // Target = next 11:00 AM local time (adjust in the code if you want ET explicitly)
+  // Target = next 11:00 AM in the viewer's local time
   const target = useMemo(() => {
     const d = new Date();
     d.setHours(11, 0, 0, 0);
-    if (Date.now() > d.getTime()) d.setDate(d.getDate() + 1); // if past 11:00 today, use tomorrow
+    if (Date.now() > d.getTime()) d.setDate(d.getDate() + 1);
     return d;
   }, []);
 
   const [remainingMs, setRemainingMs] = useState(0);
 
   useEffect(() => {
-    const update = () => setRemainingMs(Math.max(target.getTime() - Date.now(), 0));
+    const update = () =>
+      setRemainingMs(Math.max(target.getTime() - Date.now(), 0));
     update();
     const id = setInterval(update, 1000);
     return () => clearInterval(id);
@@ -29,7 +30,7 @@ export default function Home() {
   const hours = Math.floor(totalSeconds / 3600);
 
   return (
-    <>
+    <div>
       <Head>
         <title>Victus Global — Live at 11:00</title>
         <meta
@@ -59,31 +60,4 @@ export default function Home() {
         <meta name="twitter:image" content="/og.png" />
       </Head>
 
-      <main className="min-h-screen grid place-items-center bg-black text-white">
-        <div className="text-center px-6">
-          <h1 className="text-3xl md:text-5xl font-bold">
-            Victus Global — Live at 11:00
-          </h1>
-          <p className="mt-3 opacity-80">
-            This is the clean, deploy-ready build — powered by TruFi.
-          </p>
-
-          <div className="mt-8 font-mono text-4xl md:text-6xl tracking-widest">
-            {pad(hours)}:{pad(mins)}:{pad(secs)}
-          </div>
-
-          <p className="mt-4 text-sm opacity-70">
-            Starts at 11:00 (your local time). Want ET instead? I can switch it.
-          </p>
-
-          <a
-            href="#"
-            className="mt-8 inline-block rounded-full bg-lime-400 text-black font-semibold px-6 py-3 shadow hover:scale-105 transition"
-          >
-            Get a reminder
-          </a>
-        </div>
-      </main>
-    </>
-  );
-}
+      <main className="min-h-screen grid place-items-center bg-black text-
