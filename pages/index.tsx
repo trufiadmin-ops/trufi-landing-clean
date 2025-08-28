@@ -31,7 +31,7 @@ export default function Home() {
         <div className="text-center max-w-2xl mx-auto">
           {/* Logo — put your file in /public and match the name below */}
           <img
-            src="/trufi-logo.png"
+            src="/public/trufi-logo.png"
             alt="TruFi logo"
             className="w-40 md:w-56 mx-auto drop-shadow-[0_0_28px_rgba(0,240,255,0.35)]"
           />
